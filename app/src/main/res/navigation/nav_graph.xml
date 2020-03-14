@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/roleFragment">
+<!--
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.hfm.sappz.ui.main.MainFragment"
+        android:label="MainFragment" />
+-->
+    <fragment
+        android:id="@+id/roleFragment"
+        android:name="com.hfm.sappz.ui.main.RoleFragment"
+        android:label="RoleFragment">
+        <action
+            android:id="@+id/action_roleFragment_to_fieldFragment"
+            app:destination="@id/fieldFragment" />
+    </fragment>
+    <fragment android:id="@+id/fieldFragment"
+        android:name="com.hfm.sappz.ui.main.FieldFragment"
+        android:label="FieldFragment">
+        <action
+            android:id="@+id/action_fieldFragment_to_gradeFragment"
+            app:destination="@id/gradeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gradeFragment"
+        android:name="com.hfm.sappz.ui.main.GradeFragment"
+        android:label="GradeFragment">
+        <action
+            android:id="@+id/action_gradeFragment_to_bookFragment"
+            app:destination="@id/bookFragment" />
+    </fragment>
+    <fragment android:id="@+id/bookFragment"
+        android:name="com.hfm.sappz.ui.main.BookFragment"
+        android:label="BookFragment">
+        <action
+            android:id="@+id/action_bookFragment_to_fileFragment"
+            app:destination="@id/fileFragment" />
+    </fragment>
+    <fragment android:id="@+id/fileFragment"
+        android:name="com.hfm.sappz.ui.main.FileFragment"
+        android:label="FileFragment"/>
+</navigation>
