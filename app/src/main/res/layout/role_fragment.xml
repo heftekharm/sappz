@@ -4,20 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
-    tools:context=".ui.main.RoleFragment">
+    tools:context=".ui.main.RoleFragment"
+    >
 
-    <TextView
+    <include layout="@layout/bg_template"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="80dp"
         android:text="Sappz"
-        android:textColor="#ffff"
+        android:textColor="@color/colorAccent"
         android:textSize="55sp"
+        android:fontFamily="sans-serif-thin"
         app:layout_constraintBottom_toTopOf="@id/role_teacher_container_ll"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
-
     <LinearLayout
         android:orientation="vertical"
         android:id="@+id/role_teacher_container_ll"
@@ -27,54 +29,91 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/colorAccentLight"
+        android:background="@drawable/loginteacher"
+        android:layout_marginBottom="100dp"
         >
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/btn_width"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layoutDirection="rtl"
+            android:gravity="center_vertical"
             >
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/key_icon_24dp"
-                tools:ignore="VectorDrawableCompat" />
-
+                android:padding="10dp"
+                />
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/role_teacher_key_edit"
-                android:layout_width="@dimen/btn_width"
-                android:layout_height="@dimen/btn_height"
-                android:text="کلید"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="کلید"
+                android:textAlignment="center"
                 android:textColor="#ffffff"
-                android:background="#0000"
-                android:drawablePadding="5dp"
-                android:drawableRight="@drawable/key_icon_24dp"
+                android:background="#00000000"
+                android:paddingRight="10dp"
                 />
 
         </LinearLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/role_teacher_btn"
-            android:layout_width="@dimen/btn_width"
+            android:layout_width="match_parent"
             android:layout_height="@dimen/btn_height"
             android:text="@string/role_teacher_btn"
-
+            android:layout_marginBottom="-5dp"
+            app:cornerRadius="2dp"
             />
 
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/role_teacher_container_ll"
+        app:layout_constraintTop_toBottomOf="@id/role_teacher_container_ll"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorAccentLight"
+            android:layout_weight="4"
+            />
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="یا"
+            android:textColor="@color/colorAccent"
+            android:layout_marginHorizontal="10dp"
 
-    <Button
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorAccentLight"
+            android:layout_weight="4"
+            />
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/role_student_btn"
         android:layout_width="@dimen/btn_width"
         android:layout_height="@dimen/btn_height"
         android:layout_marginTop="50dp"
         android:text="@string/role_student_btn"
+        app:cornerRadius="2dp"
         app:layout_constraintStart_toStartOf="@id/role_teacher_container_ll"
-        app:layout_constraintTop_toBottomOf="@id/role_teacher_container_ll" />
+        app:layout_constraintTop_toBottomOf="@id/role_teacher_container_ll"
+
+        />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

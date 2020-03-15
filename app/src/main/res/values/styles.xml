@@ -5,10 +5,16 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">#E91E63</item>
-        <item name="fontFamily">sans-serif-thin</item>
-        <item name="textAppearanceButton">@style/TextAppearance.MaterialComponents.Button</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/shabnam</item>
+        <item name="textAppearanceButton">@style/myButtonTextAppearance</item>
         <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
+        <item name="android:layoutDirection">rtl</item>
     </style>
 
+
+
+    <style name="myButtonTextAppearance" parent="@style/TextAppearance.MaterialComponents.Button">
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>
