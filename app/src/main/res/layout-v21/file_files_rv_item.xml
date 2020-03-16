@@ -4,12 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#ffff"
-    android:padding="10dp">
+    android:padding="0dp">
 
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/book_books_rv_item_imageview_avatar"
-        android:layout_width="@dimen/books_item_imageview_size"
+        android:id="@+id/file_files_rv_item_imageview_avatar"
+        android:layout_width="60dp"
         android:layout_height="@dimen/books_item_imageview_size"
         android:src="@drawable/school3"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,29 +20,42 @@
 
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/book_books_rv_item_textview_name"
+        android:id="@+id/file_files_rv_item_textview_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:text="نام کتاب"
+        android:text="نام فایل"
         android:textSize="25sp"
-        app:layout_constraintStart_toEndOf="@id/book_books_rv_item_imageview_avatar"
-        app:layout_constraintTop_toTopOf="@id/book_books_rv_item_imageview_avatar" />
+        app:layout_constraintStart_toEndOf="@id/file_files_rv_item_imageview_avatar"
+        app:layout_constraintTop_toTopOf="@id/file_files_rv_item_imageview_avatar" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/book_books_rv_item_textview_teacher"
+        android:id="@+id/file_files_rv_item_textview_subject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=":دبیر"
-        app:layout_constraintStart_toStartOf="@id/book_books_rv_item_textview_name"
-        app:layout_constraintTop_toBottomOf="@id/book_books_rv_item_textview_name" />
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/book_books_rv_item_textview_teacher_name"
+        android:text="موضوع"
+        app:layout_constraintStart_toStartOf="@id/file_files_rv_item_textview_name"
+        app:layout_constraintTop_toBottomOf="@id/file_files_rv_item_textview_name" />
+        android:id="@+id/file_files_rv_item_textview_subject_name"
+    <!--<androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="..."
         android:layout_marginLeft="6dp"
         app:layout_constraintStart_toEndOf="@id/book_books_rv_item_textview_teacher"
         app:layout_constraintTop_toTopOf="@id/book_books_rv_item_textview_teacher" />
+-->
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:layout_width="45dp"
+        android:layout_height="0dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cornerRadius="0dp"
+        android:padding="0dp"
+        android:background="#00ff"
+        app:srcCompat="@drawable/ic_file_download"
+        android:tint="@color/colorAccent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,13 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.FileFragment">
-
-    <TextView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.main.FileFragment"
+    android:background="#ffff">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:padding="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content"
+        android:id="@+id/file_header_container"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/file_book_avatar_imageview"
+            android:layout_width="120dp"
+            android:layout_height="140dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/books"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/file_book_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="کتاب : "
+            android:textSize="20dp"
+            />
 
-</FrameLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/file_book_name_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/file_book_textview"
+            app:layout_constraintTop_toTopOf="@id/file_book_textview"
+            android:layout_marginLeft="6dp"
+            android:text=" ... "
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/file_teacher_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/file_book_textview"
+            android:text=" دبیر: "
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/file_teacher_name_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/file_teacher_textview"
+            app:layout_constraintTop_toTopOf="@id/file_teacher_textview"
+            android:layout_marginLeft="6dp"
+            android:text=" ... "
+            />
+        <LinearLayout
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/file_teacher_textview"
+            app:layout_constraintEnd_toStartOf="@id/file_book_avatar_imageview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+             android:gravity="center"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/file_seasons_num_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" ۵ "
+                    android:textSize="25dp"
+                    />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/file_seasons_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" فصل "
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/file_subjects_num_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" ۸ "
+                    android:textSize="25dp"
+                    />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/file_subjects_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="موضوع"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/file_files_num_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" ۲۰ "
+                    android:textSize="25dp"
+                    />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/file_files_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="فایل"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/file_header_container"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

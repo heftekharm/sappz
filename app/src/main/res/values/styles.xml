@@ -10,6 +10,7 @@
         <item name="textAppearanceButton">@style/myButtonTextAppearance</item>
         <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
         <item name="android:layoutDirection">rtl</item>
+        <item name="android:textColor">@color/colorPrimaryLight</item>
     </style>
 
 

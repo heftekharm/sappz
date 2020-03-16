@@ -14,7 +14,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="80dp"
         android:text="Sappz"
-        android:textColor="@color/colorAccent"
         android:textSize="55sp"
         android:fontFamily="sans-serif-thin"
         app:layout_constraintBottom_toTopOf="@id/role_teacher_container_ll"
@@ -88,7 +87,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="یا"
-            android:textColor="@color/colorAccent"
             android:layout_marginHorizontal="10dp"
 
             />
