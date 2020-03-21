@@ -41,18 +41,45 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/key_icon_24dp"
+                app:srcCompat="@drawable/ic_user"
                 android:padding="10dp"
                 />
             <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/role_teacher_key_edit"
+                android:id="@+id/role_teacher_user_edit"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:hint="کلید"
+                android:hint="نام کاربری"
                 android:textAlignment="center"
                 android:textColor="#ffffff"
                 android:background="#00000000"
                 android:paddingRight="10dp"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            >
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_key"
+                android:padding="10dp"
+                />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/role_teacher_pass_edit"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="رمز عبور"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:background="#00000000"
+                android:paddingRight="10dp"
+                android:inputType="textPassword"
                 />
 
         </LinearLayout>

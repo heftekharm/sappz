@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
-    app:startDestination="@id/roleFragment">
-<!--
+    app:startDestination="@id/mainFragment">
+
 
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.hfm.sappz.ui.main.MainFragment"
-        android:label="MainFragment" />
--->
+        android:label="MainFragment" >
+
+
+        <action
+            android:id="@+id/action_mainFragment_to_roleFragment"
+            app:destination="@id/roleFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_fieldFragment"
+            app:destination="@id/fieldFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/roleFragment"
         android:name="com.hfm.sappz.ui.main.RoleFragment"

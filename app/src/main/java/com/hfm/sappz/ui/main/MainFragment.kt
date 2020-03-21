@@ -6,7 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import com.hfm.sappz.R
+import com.parse.Parse
+import com.parse.ParseUser
 
 class MainFragment : Fragment() {
 
@@ -24,7 +28,13 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
+        val navController:NavController=findNavController();
+        val currentUser= ParseUser.getCurrentUser()
+        if( currentUser != null ){
+            navController.navigate(R.id.action_mainFragment_to_fieldFragment)
+        }else{
+            navController.navigate(R.id.action_mainFragment_to_roleFragment)
+        }
     }
 
 }

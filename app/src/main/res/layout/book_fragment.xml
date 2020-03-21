@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.BookFragment">
+    tools:context=".ui.main.BookFragment"
+    android:orientation="vertical"
+    android:layoutDirection="rtl"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/books"
+            android:layout_gravity="center"
+
+            />
+
+    </androidx.cardview.widget.CardView>
 
 <!--
     <com.google.android.material.appbar.AppBarLayout
@@ -30,11 +47,11 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 -->
-    <include layout="@layout/bg_template"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/book_books_recycleview"
         />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

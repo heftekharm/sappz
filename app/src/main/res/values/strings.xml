@@ -2,4 +2,7 @@
     <string name="app_name">sappz</string>
     <string name="role_student_btn">دانش آموز</string>
     <string name="role_teacher_btn">دبیر</string>
+    <string name="role_login_error_msg">نام کاربری یا رمز عبور اشتباه است</string>
+    <string name="role_network_error_msg">خطایی در شبکه رخ داد</string>
+    <string name="role_unknown_error_msg">خطایی رخ داد</string>
 </resources>
