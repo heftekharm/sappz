@@ -19,7 +19,7 @@ class SappzApp:Application() {
     override fun onCreate() {
         super.onCreate()
         val appId="sappzisaschoolapp"
-        val server="http://185.53.141.150:3500/parse"
+        val server="http://194.5.207.28:3500/parse"
         Parse.initialize(Parse.Configuration.Builder(this).applicationId(appId).server(server).build())
 
     }

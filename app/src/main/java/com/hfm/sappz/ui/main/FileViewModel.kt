@@ -3,6 +3,7 @@ package com.hfm.sappz.ui.main
 import android.app.DownloadManager
 import android.content.Context
 import android.net.Uri
+import android.os.Environment
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.parse.ParseObject
@@ -45,15 +46,14 @@ class FileViewModel : ViewModel() {
 
     }
 
-    fun downloadFile(context: Context, url:String){
+    fun downloadFile(context: Context, url:String,name: String){
         val req=DownloadManager.Request(Uri.parse(url))
+        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,"Sappz/${name}")
         req.setTitle("Downloading Book File")
             .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE)
         val dlManager=context.getSystemService(Context.DOWNLOAD_SERVICE) as? DownloadManager
         dlManager?.enqueue(req)
-
     }
-
 
 }
 data class BFile(val name:String,val bookId:String,val seasons:List<Int>?=null,val tags:List<String>?=null,val url:String?=null)

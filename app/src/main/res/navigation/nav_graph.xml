@@ -24,6 +24,7 @@
         android:label="RoleFragment">
         <action
             android:id="@+id/action_roleFragment_to_fieldFragment"
+
             app:destination="@id/fieldFragment" />
     </fragment>
     <fragment android:id="@+id/fieldFragment"
@@ -50,5 +51,12 @@
     </fragment>
     <fragment android:id="@+id/fileFragment"
         android:name="com.hfm.sappz.ui.main.FileFragment"
-        android:label="FileFragment"/>
+        android:label="FileFragment">
+        <action
+            android:id="@+id/action_fileFragment_to_uploadFragment"
+            app:destination="@id/uploadFragment" />
+    </fragment>
+    <fragment android:id="@+id/uploadFragment"
+        android:name="com.hfm.sappz.ui.main.UploadFragment"
+        android:label="UploadFragment"/>
 </navigation>

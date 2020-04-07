@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
             configuration.setLayoutDirection(locale)
         }
         resources.updateConfiguration(configuration, resources.displayMetrics)
+        isWriteStoragePermissionGranted()
     }
 
 

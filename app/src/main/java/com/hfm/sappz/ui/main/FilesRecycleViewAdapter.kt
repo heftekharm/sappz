@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.hfm.sappz.databinding.BookBooksRvItemBinding
 import com.hfm.sappz.databinding.FileFilesRecycleviewItemBinding
 
-class FilesRecycleViewAdapter(val files:ArrayList<BFile>,val dlfunc:(url:String)->Unit): RecyclerView.Adapter<FileViewHolder>() {
+class FilesRecycleViewAdapter(val files:ArrayList<BFile>,val dlfunc:(url:String,name:String)->Unit): RecyclerView.Adapter<FileViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FileViewHolder {
             val inflater= LayoutInflater.from(parent.context)
@@ -24,7 +24,7 @@ class FilesRecycleViewAdapter(val files:ArrayList<BFile>,val dlfunc:(url:String)
             holder.binding.fileFilesRvItemTextviewName.text = file.name
             holder.binding.fileFilesRvItemDownloadBtn.setOnClickListener{
                 if(file.url!=null){
-                    dlfunc(file.url)
+                    dlfunc(file.url,file.name)
                 }else{
                     Toast.makeText(holder.itemView.context, "آدرس فایل وجود ندارد", Toast.LENGTH_SHORT).show();
                 }

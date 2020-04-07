@@ -40,4 +40,17 @@
         android:layout_marginTop="20dp"
         />
 
+    <TextView
+        android:id="@+id/logout_click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/field_elc_btn"
+        android:layout_marginTop="10dp"
+        android:text="خروج از سیستم"
+        android:linksClickable="true"
+        android:clickable="true"
+        android:focusable="true"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

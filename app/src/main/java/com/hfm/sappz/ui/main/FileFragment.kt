@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.hfm.sappz.R
@@ -41,13 +42,20 @@ class FileFragment : Fragment() {
         viewModel.filesLiveData.observe(viewLifecycleOwner,filesObserver)
         bookId?.let { viewModel.fetchFiles(it) }
         initRecycleViewFiles()
-        binding?.fileUploadBtn?.setOnClickListener{
+        if(LocalStorage.loggedInAsStudent(context!!)){
+            binding?.fileFileUploadBtn?.hide()
+        }else{
 
+            binding?.fileFileUploadBtn?.setOnClickListener{
+                findNavController().navigate(R.id.action_fileFragment_to_uploadFragment,arguments)
+            }
         }
     }
 
     private fun initRecycleViewFiles(){
-        filesAdapter=FilesRecycleViewAdapter(ArrayList<BFile>())
+        filesAdapter=FilesRecycleViewAdapter(ArrayList<BFile>()) { url,name->
+            context?.let { viewModel.downloadFile(it,url,name) }
+        }
         binding?.fileFilesRecycleview?.adapter=filesAdapter
         binding?.fileFilesRecycleview?.layoutManager=LinearLayoutManager(context)
     }
